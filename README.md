@@ -12,3 +12,4 @@ Some of these are:
 4. sets have been avoided
 5. dot operations have been avoided (for example using sqrt instead of math.sqrt)
 6. Rather than have expensive helper function calls, all has been incorporated into the single function highest_scoring_pair
+7. Use in and not in operators as oppossed to == and != 
