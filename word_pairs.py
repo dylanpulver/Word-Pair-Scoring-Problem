@@ -33,12 +33,20 @@ def highest_scoring_pair(words_l):
                 w1, w2, max_score, found = sorted_words[i], sorted_words[j], score, True
             elif score > 0:
                 found = 1
+
             j += 1
         i += 1
-    return [w1, w2]
+    if max_score not in [0]:
+        return [w1, w2]
+    else:
+        # if the max score is 0 then every word in the list has at least 1 character in common so we return the first two words as one pair which achieves the highgest score of 0
+        return (sorted_words[0], sorted_words[1])
 
 # loading input data to list
 words_l = txt_file_to_list(os.path.join(os.getcwd(), 'words.txt'))
+
+# test of max_score = 0 edge case
+#words_l = ['a', 'a']
 
 # Execution
 start = stopwatch()
